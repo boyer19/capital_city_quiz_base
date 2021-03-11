@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Comments go in these -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Where is the ISS?</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script async defer src="fetch.js"></script>                        <!-- async means load the script at the same time the page is loading, defer = wait until whole page is loaded -->
+     
+
+    </head>
+    <body>
+        <!-- Write your HTML content here -->
+
+        
+	<h1>Where is the International Space Station</h1>
+    <h3>This page will update every 10 seconds</h3>
+    <div>
+        <table id="lat-long">
+            <tr><th>ISS Latitude:</th><th>ISS Longitude:</th></tr>                                                                  <!-- How far North and South is it-->
+            <tr><td><span id="iss-lat"></span></td><td><span id="iss-long"></span></td></tr>                                         <!-- How far East West is it-->
+        </table>
+        <p id="time"></p>
+    </div>
+
+    <div id="iss-map"></div>
+
+    <p>Icon of iss by Viktor Korobkov from the Noun Project</p>
+    <script>
+        // Script written in fetch.jss
+
+    </script>
+    </body>
+
+</html>
