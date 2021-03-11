@@ -2,11 +2,14 @@
 
 //https://api.worldbank.org/v2/country/
 let playAgainButton = document.querySelector('#play-again-button')
+let userAnswerElement = document.querySelector("#user-answer")  // Needed to be placed outside of the function() for the playAgain, aka "clear" button to work
+let resultTextElement = document.querySelector('#result')       // Needed to be placed outside of the function() for the playAgain, aka "clear" button to work
+
 function countryGame() {
     let randomCountryElement = document.querySelector('#random-country')
 
     let submitButton = document.querySelector("#submit-answer")
-    let resultTextElement = document.querySelector('#result')
+    
 
     
 
@@ -32,6 +35,11 @@ function countryGame() {
 
     console.log(countriesAndCodes)  // You don't need to log countriesAndCodes - just proving it is available 
 
+    document.addEventListener('keyup', function() {
+        if (event.keyCode == 13) {
+            submitButton.click()               // Allows user to use the 'Enter' key to Add to list
+        }
+    })
     // TODO add a click event handler to the submitButton.  When the user clicks the button,
     //  * read the text from the userAnswerElement 
     //  * Use fetch() to make a call to the World Bank API with the two-letter country code (from countriesAndCodes, example 'CN' or 'AF')
@@ -48,20 +56,13 @@ function countryGame() {
     }).then( (countryData) => {
         //console.log(countryData)
 
-        // Short hand
-        // fetch(url).then( res => res.json() )
-        // .then( (countryData) => {
-        //     console.log(issData)
-        // }).catch( (err) => {
-        //     console.log('ERROR!', err)
-        // })
         
         let city = countryData[1][0].capitalCity
         console.log(city)
         //resultTextElement.innerHTML = city
         submitButton.addEventListener('click', function() {
             //alert('The button was clicked for submission')
-            let userAnswerElement = document.querySelector("#user-answer")
+            
             if (userAnswerElement.value === city) {
                 resultTextElement.innerHTML = "Correct"
             } else {
@@ -96,6 +97,8 @@ function countryGame() {
 
 playAgainButton.addEventListener('click', function() {
     //alert('The button was clicked to play again')
+    userAnswerElement.value = ''
+    resultTextElement.innerHTML = ''
     countryGame()
 })
 countryGame()

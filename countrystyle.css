@@ -1,0 +1,71 @@
+
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(10, 58, 107);
+    text-shadow: 1px 1px 1px red;
+}
+
+body {
+    background-image: url(brett-zeck-eyfMgGvo9PA-unsplash.jpg);
+   
+    background-repeat: no-repeat; 
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    
+ 
+}
+
+#random-country {
+    text-align: center;
+    color:white;
+    text-shadow:3px 3px 2px blue;
+   
+}
+
+h3 {
+    text-align: center;
+    color:rgb(255, 255, 255);
+    text-shadow:2px 2px 2px darkred;
+    margin: 120px;
+    
+}
+p {
+    padding-left: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px darkred;
+    text-align:left;
+}
+
+#user-answer {
+    background-color: rgb(238, 223, 164);
+    border: 5px  lightslategrey solid;
+    max-width: 400px;
+    color:maroon;
+    
+}
+
+#submit-answer {
+    border: 5px darkred solid;
+    color:darkred;
+    background-color: darksalmon;
+    padding:2px;
+    left:250px;
+ 
+}
+
+#play-again-button {
+    background-color: royalblue;
+}
+
+#result {
+    margin: 120px;
+}
+
+#question {
+    text-align: center;
+    color:rgb(255, 255, 255);
+    text-shadow:2px 2px 2px darkred;
+}
